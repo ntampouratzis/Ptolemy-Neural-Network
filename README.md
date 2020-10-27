@@ -1,3 +1,2 @@
 # Ptolemy-Neural-Network-
-This is an example about a fully connected neural network built in Ptolemy II.
-Read more on documentation_vol2.pdf
+This repo contains a fully connected neural network implementation and also a GRU and LSTM network implementation in Ptolemy II.
