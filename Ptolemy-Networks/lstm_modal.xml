@@ -4,13 +4,13 @@
 <entity name="lstm_modal" class="ptolemy.actor.TypedCompositeActor">
     <property name="_createdBy" class="ptolemy.kernel.attributes.VersionAttribute" value="11.0.1">
     </property>
-    <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={343, 126, 1075, 767}, maximized=false}">
+    <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={660, 209, 1075, 701}, maximized=false}">
     </property>
-    <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[847, 650]">
+    <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[847, 584]">
     </property>
-    <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="0.6400000000000008">
+    <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="1.0000000000000013">
     </property>
-    <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{440.12374371859266, 297.3849717336685}">
+    <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{275.8140703517588, 73.979192839196}">
     </property>
     <property name="DE Director" class="ptolemy.domains.de.kernel.DEDirector">
         <property name="stopTime" class="ptolemy.data.expr.Parameter" value="timesteps">
@@ -19,7 +19,7 @@
         </property>
     </property>
     <property name="ShowTypes" class="ptolemy.vergil.actor.lib.ShowTypes">
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[305.0, -55.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[0.0, -20.0]">
         </property>
     </property>
     <property name="Line" class="ptolemy.vergil.kernel.attributes.LineAttribute">
@@ -30,7 +30,7 @@
         <property name="x" class="ptolemy.data.expr.Parameter" value="1000.0">
         </property>
     </property>
-    <property name="timesteps" class="ptolemy.data.expr.Parameter" value="240*predictions">
+    <property name="timesteps" class="ptolemy.data.expr.Parameter" value="input_seq_size*predictions">
         <property name="_hideName" class="ptolemy.kernel.util.SingletonAttribute">
         </property>
         <property name="_icon" class="ptolemy.vergil.icon.ValueIcon">
@@ -46,7 +46,7 @@
         </property>
         <property name="_editorFactory" class="ptolemy.vergil.toolbox.VisibleParameterEditorFactory">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[65.0, -45.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[65.0, -20.0]">
         </property>
     </property>
     <property name="predictions" class="ptolemy.data.expr.Parameter" value="5">
@@ -68,14 +68,33 @@
         <property name="_location" class="ptolemy.kernel.util.Location" value="[65.0, -70.0]">
         </property>
     </property>
+    <property name="input_seq_size" class="ptolemy.data.expr.Parameter" value="240">
+        <property name="_hideName" class="ptolemy.kernel.util.SingletonAttribute">
+        </property>
+        <property name="_icon" class="ptolemy.vergil.icon.ValueIcon">
+            <property name="_color" class="ptolemy.actor.gui.ColorAttribute" value="{0.0, 0.0, 1.0, 1.0}">
+            </property>
+        </property>
+        <property name="_smallIconDescription" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
+            <configure>
+      <svg>
+        <text x="20" style="font-size:14; font-family:SansSerif; fill:blue" y="20">-P-</text>
+      </svg>
+    </configure>
+        </property>
+        <property name="_editorFactory" class="ptolemy.vergil.toolbox.VisibleParameterEditorFactory">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[65.0, -45.0]">
+        </property>
+    </property>
     <property name="Annotation" class="ptolemy.vergil.kernel.attributes.TextAttribute">
         <property name="textSize" class="ptolemy.data.expr.Parameter" value="12">
         </property>
         <property name="textColor" class="ptolemy.actor.gui.ColorAttribute" value="{0.0,0.2,1.0,1.0}">
         </property>
-        <property name="text" class="ptolemy.kernel.util.StringAttribute" value="Set the &quot;predictions&quot; parameter a value between 1 to &quot;number of predictions you want to make&quot;.&#10;&quot;timesteps&quot; parameter is 240 timesteps, multiplied by the number of predictions we want to make.&#10;">
+        <property name="text" class="ptolemy.kernel.util.StringAttribute" value="Set the &quot;predictions&quot; parameter a value between 1 to &quot;number of predictions you want to make&quot;.&#10;Set the &quot;input_seq_size&quot; parameter the size of the input sequence.&#10;&quot;timesteps&quot; parameter is the result of the input sequence size, multiplied by the number of predictions.&#10;">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[350.0, -75.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[325.0, -85.0]">
         </property>
     </property>
     <entity name="DiscreteClock" class="ptolemy.actor.lib.DiscreteClock">
@@ -284,31 +303,31 @@
                 </property>
                 <property name="isInitialState" class="ptolemy.data.expr.Parameter" value="false">
                 </property>
+                <property name="_hideName" class="ptolemy.data.expr.SingletonParameter" value="true">
+                </property>
                 <property name="_controllerFactory" class="ptolemy.vergil.modal.modal.HierarchicalStateControllerFactory">
                 </property>
                 <property name="_location" class="ptolemy.kernel.util.Location" value="[476.49999999999994, 247.24067471708986]">
-                </property>
-                <property name="_hideName" class="ptolemy.data.expr.SingletonParameter" value="true">
                 </property>
             </entity>
             <entity name="dense" class="ptolemy.domains.modal.kernel.State">
                 <property name="refinementName" class="ptolemy.kernel.util.StringAttribute" value="dense">
                 </property>
+                <property name="_hideName" class="ptolemy.data.expr.SingletonParameter" value="true">
+                </property>
                 <property name="_controllerFactory" class="ptolemy.vergil.modal.modal.HierarchicalStateControllerFactory">
                 </property>
                 <property name="_location" class="ptolemy.kernel.util.Location" value="[596.4999999999999, 247.24067471708986]">
-                </property>
-                <property name="_hideName" class="ptolemy.data.expr.SingletonParameter" value="true">
                 </property>
             </entity>
             <entity name="reset" class="ptolemy.domains.modal.kernel.State">
                 <property name="isFinalState" class="ptolemy.data.expr.Parameter" value="true">
                 </property>
+                <property name="_hideName" class="ptolemy.data.expr.SingletonParameter" value="true">
+                </property>
                 <property name="_controllerFactory" class="ptolemy.vergil.modal.modal.HierarchicalStateControllerFactory">
                 </property>
                 <property name="_location" class="ptolemy.kernel.util.Location" value="[305.0, 345.0]">
-                </property>
-                <property name="_hideName" class="ptolemy.data.expr.SingletonParameter" value="true">
                 </property>
             </entity>
             <entity name="timestep_0" class="ptolemy.domains.modal.kernel.State">
@@ -316,11 +335,11 @@
                 </property>
                 <property name="isInitialState" class="ptolemy.data.expr.Parameter" value="true">
                 </property>
+                <property name="_hideName" class="ptolemy.data.expr.SingletonParameter" value="true">
+                </property>
                 <property name="_controllerFactory" class="ptolemy.vergil.modal.modal.HierarchicalStateControllerFactory">
                 </property>
                 <property name="_location" class="ptolemy.kernel.util.Location" value="[336.49999999999994, 247.24067471708986]">
-                </property>
-                <property name="_hideName" class="ptolemy.data.expr.SingletonParameter" value="true">
                 </property>
             </entity>
             <relation name="relation" class="ptolemy.domains.modal.kernel.Transition">

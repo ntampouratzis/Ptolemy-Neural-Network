@@ -8,12 +8,12 @@
     </property>
     <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[1708, 949]">
     </property>
-    <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="0.9585405607476642">
+    <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="1.1981757009345813">
     </property>
-    <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{-79.02010050251272, 212.2404993718593}">
+    <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{214.1859296482412, -5.136385050251306}">
     </property>
     <property name="ShowTypes" class="ptolemy.vergil.actor.lib.ShowTypes">
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[-45.0, -215.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[-345.0, -180.0]">
         </property>
     </property>
     <property name="DE Director" class="ptolemy.domains.de.kernel.DEDirector">
@@ -22,7 +22,7 @@
         <property name="_location" class="ptolemy.kernel.util.Location" value="[-355.0, -215.0]">
         </property>
     </property>
-    <property name="timesteps" class="ptolemy.data.expr.Parameter" value="240*predictions">
+    <property name="timesteps" class="ptolemy.data.expr.Parameter" value="input_seq_size*predictions">
         <property name="_hideName" class="ptolemy.kernel.util.SingletonAttribute">
         </property>
         <property name="_icon" class="ptolemy.vergil.icon.ValueIcon">
@@ -38,7 +38,7 @@
         </property>
         <property name="_editorFactory" class="ptolemy.vergil.toolbox.VisibleParameterEditorFactory">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[-280.0, -210.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[-280.0, -185.0]">
         </property>
     </property>
     <property name="Annotation" class="ptolemy.vergil.kernel.attributes.TextAttribute">
@@ -46,9 +46,9 @@
         </property>
         <property name="textColor" class="ptolemy.actor.gui.ColorAttribute" value="{0.0,0.2,1.0,1.0}">
         </property>
-        <property name="text" class="ptolemy.kernel.util.StringAttribute" value="Set the &quot;predictions&quot; parameter a value between 1 to &quot;number of predictions you want to make&quot;.&#10;&quot;timesteps&quot; parameter is 240 timesteps, multiplied by the number of predictions we want to make.&#10;">
+        <property name="text" class="ptolemy.kernel.util.StringAttribute" value="Set the &quot;predictions&quot; parameter a value between 1 to &quot;number of predictions you want to make&quot;.&#10;Set the &quot;input_seq_size&quot; parameter the size of the input sequence.&#10;&quot;timesteps&quot; parameter is the result of the input sequence size, multiplied by the number of predictions.&#10;">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[-5.0, -235.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[-25.0, -245.0]">
         </property>
     </property>
     <property name="predictions" class="ptolemy.data.expr.Parameter" value="5">
@@ -74,6 +74,25 @@
         <property name="_location" class="ptolemy.kernel.util.Location" value="[-440.0, -165.0]">
         </property>
         <property name="x" class="ptolemy.data.expr.Parameter" value="1000.0">
+        </property>
+    </property>
+    <property name="input_seq_size" class="ptolemy.data.expr.Parameter" value="240">
+        <property name="_hideName" class="ptolemy.kernel.util.SingletonAttribute">
+        </property>
+        <property name="_icon" class="ptolemy.vergil.icon.ValueIcon">
+            <property name="_color" class="ptolemy.actor.gui.ColorAttribute" value="{0.0, 0.0, 1.0, 1.0}">
+            </property>
+        </property>
+        <property name="_smallIconDescription" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
+            <configure>
+      <svg>
+        <text x="20" style="font-size:14; font-family:SansSerif; fill:blue" y="20">-P-</text>
+      </svg>
+    </configure>
+        </property>
+        <property name="_editorFactory" class="ptolemy.vergil.toolbox.VisibleParameterEditorFactory">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[-280.0, -210.0]">
         </property>
     </property>
     <entity name="GRU" class="ptolemy.domains.modal.modal.ModalModel">
