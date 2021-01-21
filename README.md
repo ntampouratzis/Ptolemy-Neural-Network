@@ -3,7 +3,7 @@ This repo contains a fully connected neural network implementation and also a GR
 
 
 # Fully-Connected Network 
-A two hidden layer architecture trained for handwritten digit recognition.
+A one-hidden layer architecture trained for handwritten digit recognition.
 
 It gets as input a 28x28 grayscale image of a handwritten digit and it produces the probabilities related to the 10 classes of digits from 0 to 9.
 
