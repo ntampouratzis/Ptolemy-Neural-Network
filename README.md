@@ -20,4 +20,3 @@ They are implemented in Ptolemy using an hierarchy of DE-ModalModel-SDF MoCs.
 ![test](https://github.com/ntampouratzis/Ptolemy-Neural-Network/blob/master/ptolemy-models/DE-Modal-SDF/GRU/temperaturePredictionUsingGRU.png | width=1226)
 
 ![test](https://github.com/ntampouratzis/Ptolemy-Neural-Network/blob/master/ptolemy-models/DE-Modal-SDF/LSTM/temperaturePredictionLSTM.png | width=1226)
-
