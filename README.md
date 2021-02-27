@@ -24,4 +24,8 @@ They are implemented in Ptolemy using an hierarchy of DE-ModalModel-SDF MoCs.
 # Ptolemy  II  machine  learning  library
 The following figure shows our Ptolemy II machine learning library which is implemented in UserLibrary folder. The library enables  the  designers  to  develop their complex recurrent neural networks using our fundamental structures minimizing the development and verification time.
 
+In order to include our library into your Ptolemy II installation, you may either replace your /home/<username>/.ptolemyII/UserLibrary.xml with our library found in the UserLibrary folder, or you may open our library using vergil (the Ptolemy II editor) and copy our library blocks to your library.
+
+Examples showing the use of the library are the aforementioned GRU and LSTM networks implementations.
+
 <img src="https://github.com/ntampouratzis/Ptolemy-Neural-Network/blob/master/ptolemy-models/UserLibrary/library.png">
